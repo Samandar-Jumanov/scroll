@@ -11,11 +11,14 @@ const ImagesSlider = () =>{
     let  [image , setImage] = useState(0)
     const Images = [ { id:1, url:image1 }, {id:2, url:image2},{ id:3, url:image3},{id:4,url:image4}]
 
-    setTimeout(()=>{
+    let timeout =  setTimeout(()=>{
       image <  Images.length -1  && setImage(image +1 )
-    }, 2000)
-     
-  
+    }, 3000)
+
+
+    //    if(Images.length ==4){
+    //     clearTimeout(timeout)
+    //    }
      return(
     <div className='imageSliderContainer'>
         <h1 style={{color:'white'}}>Auto scroll and handle scrol images
