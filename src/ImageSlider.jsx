@@ -19,8 +19,6 @@ const ImagesSlider = () =>{
       if (image > 0 ){
         setImage(image -1 )
       } 
-      setImage(0)
-      clearTimeout(timeout)
     }
 
      return(
