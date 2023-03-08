@@ -14,14 +14,18 @@ const ImagesSlider = () =>{
     let timeout =  setTimeout(()=>{
       image <  Images.length -1  && setImage(image +1 )
     }, 3000)
+  console.log(timeout)
+    const getBack =()=>{
+      if (image > 0 ){
+        setImage(image -1 )
+      } 
+      setImage(0)
+      clearTimeout(timeout)
+    }
 
-
-    //    if(Images.length ==4){
-    //     clearTimeout(timeout)
-    //    }
      return(
     <div className='imageSliderContainer'>
-        <h1 style={{color:'white'}}>Auto scroll and handle scrol images
+        <h1 style={{color:'white'}}>Auto scroll and handle scroll images
        <p>{Images[image].id} /{Images.length}</p>         
          </h1> 
     <div className="inner">
@@ -29,7 +33,7 @@ const ImagesSlider = () =>{
     <img src={Images[image].url} alt=""  className='image'/>
    <br />
    <br />
-   <button onClick={()=>{image> 0 && setImage(image-1)}} className='btn back'><BiArrowBack/></button>
+   <button onClick={getBack} className='btn back'><BiArrowBack/></button>
    <button onClick={()=>{image < Images.length - 1 && setImage(image+1)}} className='btn next'><GrLinkNext/></button>
     </div>
     </div>
